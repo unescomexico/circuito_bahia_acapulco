@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuito Bahía Histórica</title>
+    <style>
+        /* Importamos Montserrat */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        /* Reset básico y asegurar que la página cubra el viewport completo */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        /* Fondo que cubre toda la pantalla sin repetirse */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: url('pics/1.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* Contenedor central (overlay) */
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 255, 0.5);
+            /* Azul transparente */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .overlay h1 {
+            font-size: 2em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .overlay h2 {
+            font-size: 1.5em;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        /* Contenedor de botones */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        /* Estilo común para botones y el botón principal del dropdown */
+        .btn,
+        .dropdown-btn {
+            background: #007BFF;
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            transition: background 0.3s;
+            cursor: pointer;
+            font-size: 1em;
+            border: none;
+        }
+
+        .btn:hover,
+        .dropdown-btn:hover {
+            background: #0056b3;
+        }
+
+        /* Dropdown container */
+        .dropdown {
+            position: relative;
+            width: 100%;
+        }
+
+        /* Contenido del dropdown: oculto por defecto */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #007BFF;
+            width: 100%;
+            border-radius: 0 0 4px 4px;
+            z-index: 100;
+        }
+
+        /* Opciones del dropdown */
+        .dropdown-content a {
+            display: block;
+            padding: 8px 15px;
+            text-decoration: none;
+            color: #fff;
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            transition: background 0.3s;
+            text-align: left;
+        }
+
+        .dropdown-content a:hover {
+            background: #0056b3;
+        }
+
+        /* Mostrar dropdown al pasar el cursor sobre el contenedor */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overlay">
+        <h1>Circuito Bahía Histórica</h1>
+        <h2>Un recorrido por el Acapulco Tradicional</h2>
+        <div class="button-container">
+            <!-- Primer botón con dropdown -->
+            <div class="dropdown">
+                <a class="dropdown-btn" href="https://unesco.sharepoint.com/:f:/s/MexicoTeam/EmADPTSQ8jdIgDPaKQWH8DcBJs4T_wdVD2WDuCt4eKRGrw?email=arq.aldercorona%40gmail.com&e=9uFxt5">
+                    Sitios del Circuito Bahía Histórica
+                </a>
+                <div class="dropdown-content">
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Fuerte%20de%20San%20Diego%20-%20Plaza%20M%C3%A9xico%E2%80%93Filipinas?csf=1&web=1&e=thUdD6">Fuerte de San Diego / Plaza México – Filipinas</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Museo%20de%20las%208%20Regiones?csf=1&web=1&e=DWW62t">Museo de las 8 Regiones</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Museo%20de%20la%20M%C3%A1scara?csf=1&web=1&e=poWyob">Museo de la Máscara</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Museo%20Naval?csf=1&web=1&e=dpLD5n">Museo Naval</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Edificio%20Oviedo?csf=1&web=1&e=d2DawW">Edificio Oviedo</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Z%C3%B3calo%20-%20Catedral?csf=1&web=1&e=HMOh1S">Zócalo / Catedral</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Casa%20de%20los%20Vientos?csf=1&web=1&e=vKpWn1">Casa de los Vientos</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Fort%C3%ADn%20%C3%81lvarez?csf=1&web=1&e=eCTKjL">Fortín Álvarez</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Centro%20Cultural%20Domingo%20Soler?csf=1&web=1&e=9IHivo">Centro Cultural Domingo Soler</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Monumento%20al%20Gale%C3%B3n%20de%20Manila?csf=1&web=1&e=3u3f2N">Monumento al Galeón de Manila</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Plaza%20la%20Quebrada?csf=1&web=1&e=mcwHXx">Plaza la Quebrada</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Hotel%20Mirador-La%20Quebrada?csf=1&web=1&e=IjavgP">Hotel Mirador-La Quebrada</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Clavadistas%20de%20La%20Quebrada?csf=1&web=1&e=ayTJR5">Clavadistas de La Quebrada</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Anfiteatro%20Sinfon%C3%ADa%20del%20Mar?csf=1&web=1&e=KXwOdM">Anfiteatro Sinfonía del Mar</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Playa%20La%20Angosta?csf=1&web=1&e=RWZScO">Playa La Angosta</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Paseo%20del%20Pescador?csf=1&web=1&e=1VG1CX">Paseo del Pescador</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Rotonda%20de%20las%20Mujeres%20y%20Hombres%20Ilustres?csf=1&web=1&e=JgV4CO">Rotonda de las Mujeres y Hombres Ilustres</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Edificio%20Estibadores?csf=1&web=1&e=YaxdpF">Edificio Estibadores</a>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Sitios%20Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/Casona%20de%20Ju%C3%A1rez?csf=1&web=1&e=owyIdZ">Casona de Juárez</a>
+                </div>
+            </div>
+            <!-- Otros botones -->
+            <a class="btn" href="https://unesco.sharepoint.com/:l:/s/MexicoTeam/FIjewQG5XjZDvHIWWVACgvEBX9MXcoKzbBayK6Twlz5ZRA?email=arq.aldercorona%40gmail.com&e=yMonYe">Organizaciones identificadas</a>
+            <a class="btn" href="https://unesco.sharepoint.com/:l:/s/MexicoTeam/FGhsNrSS1BZEq1gOGblPeRMBZT6qBKJ3H7e5ilCXlUahpA?email=arq.aldercorona%40gmail.com&e=pOfnG4">Actores identificados</a>
+            <a class="btn" href="https://unesco.sharepoint.com/:l:/s/MexicoTeam/FIBSUPaCw3pDoZoimMbLIrMBCHHvWbFwMaPyG766O4Go0w?email=arq.aldercorona%40gmail.com&e=ZGqGn0">Repositorio documental</a>
+        </div>
+    </div>
+</body>
+
+</html>
