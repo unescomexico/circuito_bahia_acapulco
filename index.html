@@ -33,27 +33,25 @@
 
         /* Contenedor central (overlay) */
         .overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(0, 0, 255, 0.5);
-            /* Azul transparente */
+            position: relative;
+            margin: 20px auto;
+            background: rgba(0, 0, 255, 0.5); /* Azul transparente */
             padding: 20px;
             border-radius: 8px;
             text-align: center;
-            width: 80%;
-            max-width: 600px;
+            width: 90%;
+            max-width: 800px;
         }
 
+
         .overlay h1 {
-            font-size: 2em;
+            font-size: 2.5em;
             color: #fff;
             margin-bottom: 10px;
         }
 
         .overlay h2 {
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: #fff;
             margin-bottom: 20px;
         }
@@ -62,7 +60,7 @@
         .button-container {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
             align-items: center;
         }
 
@@ -71,15 +69,16 @@
         .dropdown-btn {
             background: #007BFF;
             color: #fff;
-            padding: 10px 15px;
+            padding: 15px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 6px;
             display: inline-block;
             width: 100%;
+            max-width: 600px;
             text-align: center;
             transition: background 0.3s;
             cursor: pointer;
-            font-size: 1em;
+            font-size: 1.2em;
             border: none;
         }
 
@@ -92,6 +91,7 @@
         .dropdown {
             position: relative;
             width: 100%;
+            max-width: 600px;
         }
 
         /* Contenido del dropdown: oculto por defecto */
@@ -109,7 +109,7 @@
         /* Opciones del dropdown */
         .dropdown-content a {
             display: block;
-            padding: 8px 15px;
+            padding: 10px 15px;
             text-decoration: none;
             color: #fff;
             border-top: 1px solid rgba(255, 255, 255, 0.3);
@@ -125,51 +125,153 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
+        /* Descripción */
+        .description {
+            color: #fff;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            max-width: 600px;
+            text-align: justify;
+        }
+        /* Imagen centrada encima del título */
+        .pleca-acapulco {
+            display: block;
+            margin: 0 auto 10px auto; /* Centra y añade espacio debajo */
+            max-width: 400px; /* Controla el tamaño máximo */
+            height: auto;
+        }
+
     </style>
 </head>
 
 <body>
     <div class="overlay">
+        <!-- Imagen centrada -->
+        <img src="pics/pleca_acapulco_white.png" alt="Pleca Acapulco" class="pleca-acapulco">
+        <br>
         <h1>Circuito Bahía Histórica</h1>
         <h2>Un recorrido por el Acapulco Tradicional</h2>
         <div class="button-container">
-            <!-- Botón Definición del área con dropdown -->
-            <div class="dropdown">
-                <a class="dropdown-btn" href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea?csf=1&web=1&e=cgaiZE">Definición del área</a>
-                <div class="dropdown-content">
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/01%20Fuerte%20de%20San%20Diego%20-%20Plaza%20M%C3%A9xico%E2%80%93Filipinas?csf=1&web=1&e=XhOy34">Fuerte de San Diego / Plaza México – Filipinas</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/02%20Museo%20de%20las%208%20Regiones?csf=1&web=1&e=prHUGr">Museo de las 8 Regiones</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/03%20Museo%20de%20la%20M%C3%A1scara?csf=1&web=1&e=dPRwab">Museo de la Máscara</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/04%20Museo%20Naval?csf=1&web=1&e=7hqjNJ">Museo Naval</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/05%20Edificio%20Oviedo?csf=1&web=1&e=L7dJna">Edificio Oviedo</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/06%20Z%C3%B3calo%20-%20Catedral?csf=1&web=1&e=LpcMI4">Zócalo / Catedral</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/07%20Casa%20de%20los%20Vientos?csf=1&web=1&e=Mxi4CR">Casa de los Vientos</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/08%20Fort%C3%ADn%20%C3%81lvarez?csf=1&web=1&e=cgMskA">Fortín Álvarez</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/09%20Centro%20Cultural%20Domingo%20Soler?csf=1&web=1&e=l22eJ1">Centro Cultural Domingo Soler</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/10%20Monumento%20al%20Gale%C3%B3n%20de%20Manila?csf=1&web=1&e=3MqTCl">Monumento al Galeón de Manila</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/11%20Plaza%20la%20Quebrada?csf=1&web=1&e=M5q3ad">Plaza la Quebrada</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/12%20Hotel%20Mirador-La%20Quebrada?csf=1&web=1&e=vKqiQ1">Hotel Mirador-La Quebrada</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/13%20Clavadistas%20de%20La%20Quebrada?csf=1&web=1&e=WihFV2">Clavadistas de La Quebrada</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/14%20Anfiteatro%20Sinfon%C3%ADa%20del%20Mar?csf=1&web=1&e=aSyOiH">Anfiteatro Sinfonía del Mar</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/15%20Playa%20La%20Angosta?csf=1&web=1&e=1WTZaC">Playa La Angosta</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/16%20Paseo%20del%20Pescador?csf=1&web=1&e=jgIopT">Paseo del Pescador</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/17%20Rotonda%20de%20las%20Mujeres%20y%20Hombres%20Ilustres?csf=1&web=1&e=dw6uvw">Rotonda de las Mujeres y Hombres Ilustres</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/18%20Edificio%20Estibadores?csf=1&web=1&e=Sffssj">Edificio Estibadores</a>
-                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/19%20Casona%20de%20Ju%C3%A1rez?csf=1&web=1&e=6gOfGL">Casona de Juárez</a>
-                </div>
-            </div>
-            <!-- Otros botones -->
-            
-            <a class="btn" href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/03%20Banco%20de%20informaci%C3%B3n?csf=1&web=1&e=JvrdFE">Banco de información</a>
+            <!-- Información General -->
+            <a class="btn" href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/00%20Informaci%C3%B3n%20general%20del%20circuito?csf=1&web=1&e=fa2Js9" target="_blank">
+                Información general del circuito
+            </a>
+            <p class="description">
+                Se incluye en este apartado material producido con respecto a la generalidad del circuito,
+                incluyendo las fichas para el diagnóstico y proposición de proyectos relativos a los sitios que lo
+                integran.
+            </p>
 
-            <!-- Botón Identificación de actores con dropdown -->
+            <!-- Definición del Área -->
             <div class="dropdown">
-                <a class="dropdown-btn" href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/05%20Identificaci%C3%B3n%20de%20actores%20y%20agentes?csf=1&web=1&e=rojHPk">Identificación de actores</a>
+                <a class="dropdown-btn" href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea?csf=1&web=1&e=PKMsjt" target="_blank">
+                    Definición del área y oferta turística
+                </a>
                 <div class="dropdown-content">
-                    <a href="https://unesco.sharepoint.com/:l:/s/MexicoTeam/FGhsNrSS1BZEq1gOGblPeRMBZT6qBKJ3H7e5ilCXlUahpA?email=m.colin-pano%40unesco.org&e=w3pSgi">Identificación de agentes</a>
-                    <a href="https://unesco.sharepoint.com/:l:/s/MexicoTeam/FIjewQG5XjZDvHIWWVACgvEBSOW1NXrBHU_ljKzvYN4xtw?email=m.colin-pano%40unesco.org&e=VHaQT4">Identificación de organizaciones</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/01%20Fuerte%20de%20San%20Diego%20-%20Plaza%20M%C3%A9xico%E2%80%93Filipinas?csf=1&web=1&e=XhOy34" target="_blank">Fuerte
+                        de San Diego / Plaza México – Filipinas</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/02%20Museo%20de%20las%208%20Regiones?csf=1&web=1&e=prHUGr" target="_blank">Museo
+                        de las 8 Regiones</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/03%20Museo%20de%20la%20M%C3%A1scara?csf=1&web=1&e=dPRwab" target="_blank">Museo
+                        de la Máscara</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/04%20Museo%20Naval?csf=1&web=1&e=7hqjNJ" target="_blank">Museo
+                        Naval</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/05%20Edificio%20Oviedo?csf=1&web=1&e=L7dJna" target="_blank">Edificio
+                        Oviedo</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/06%20Z%C3%B3calo%20-%20Catedral?csf=1&web=1&e=LpcMI4" target="_blank">Zócalo
+                        / Catedral</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/07%20Casa%20de%20los%20Vientos?csf=1&web=1&e=Mxi4CR" target="_blank">Casa
+                        de los Vientos</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/08%20Fort%C3%ADn%20%C3%81lvarez?csf=1&web=1&e=cgMskA" target="_blank">Fortín
+                        Álvarez</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/09%20Centro%20Cultural%20Domingo%20Soler?csf=1&web=1&e=l22eJ1" target="_blank">Centro
+                        Cultural Domingo Soler</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/10%20Monumento%20al%20Gale%C3%B3n%20de%20Manila?csf=1&web=1&e=3MqTCl" target="_blank">Monumento
+                        al Galeón de Manila</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/11%20Plaza%20la%20Quebrada?csf=1&web=1&e=M5q3ad" target="_blank">Plaza
+                        la Quebrada</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/12%20Hotel%20Mirador-La%20Quebrada?csf=1&web=1&e=vKqiQ1" target="_blank">Hotel
+                        Mirador-La Quebrada</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/13%20Clavadistas%20de%20La%20Quebrada?csf=1&web=1&e=WihFV2" target="_blank">Clavadistas
+                        de La Quebrada</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/14%20Anfiteatro%20Sinfon%C3%ADa%20del%20Mar?csf=1&web=1&e=aSyOiH" target="_blank">Anfiteatro
+                        Sinfonía del Mar</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/15%20Playa%20La%20Angosta?csf=1&web=1&e=1WTZaC" target="_blank">Playa
+                        La Angosta</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/16%20Paseo%20del%20Pescador?csf=1&web=1&e=jgIopT" target="_blank">Paseo
+                        del Pescador</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/17%20Rotonda%20de%20las%20Mujeres%20y%20Hombres%20Ilustres?csf=1&web=1&e=dw6uvw" target="_blank">Rotonda
+                        de las Mujeres y Hombres Ilustres</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/18%20Edificio%20Estibadores?csf=1&web=1&e=Sffssj" target="_blank">Edificio
+                        Estibadores</a>
+                    <a
+                        href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/01%20Definici%C3%B3n%20del%20%C3%A1rea/19%20Casona%20de%20Ju%C3%A1rez?csf=1&web=1&e=6gOfGL" target="_blank">Casona
+                        de Juárez</a>
                 </div>
             </div>
+            <p class="description">
+                Delimitación y análisis de la zona urbana que rodea el Circuito, considerando los servicios turísticos, infraestructura
+                y otros elementos urbanos relevantes para su planeación y desarrollo. En esta sección se incluye una
+                carpeta por cada uno de los sitios, en cada una se puede encontrar un mapa de sitio, un plano urbano y la
+                agenta de los espacios, con un calendario semanal, así como un listado de actividades y servicios disponibles en cada espacio.
+            </p>
+
+            <!-- Banco de información -->
+            <a class="btn" href="https://unesco.sharepoint.com/:l:/s/MexicoTeam/FIBSUPaCw3pDoZoimMbLIrMBCHHvWbFwMaPyG766O4Go0w?e=hcPQpe" target="_blank">
+                Banco de información
+            </a>
+            <p class="description">
+                Se creó un repositorio documental con material seleccionado que abarca aspectos históricos, sociales y turísticos de los
+                sitios que conforman el Circuito Bahía Histórica. En esta sección es posible acceder a un listado de material
+                bibliográfico asociado a los sitios que integran el circuito, incluidos publicaciones, investigaciones e imágenes
+                históricas.
+            </p>
+
+            <!-- Información existente y faltante -->
+            <a class="btn" href="https://unesco.sharepoint.com/:l:/s/MexicoTeam/FBpiBH9dJ8hCiocanVRg2j0BIFDOMSax4FlOK1Z01fqSBw?e=0W0s1D" target="_blank">
+                Información existente y faltante
+            </a>
+            <p class="description">
+                Se elaboró un tabulado que recopila datos clave de cada sitio, identificando los aspectos pendientes de documentación
+                para su incorporación posterior. Es posible modificar esta relación para agregar o modificar datos que requieran de
+                correcciones, así como anexar faltantes. También es posible adjuntas documentos complementarios a cada registro.
+            </p>
+
+            <!-- Identificación de actores -->
+            <div class="dropdown">
+                <a class="dropdown-btn"
+                    href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/05%20Identificaci%C3%B3n%20de%20actores%20y%20agentes?csf=1&web=1&e=UtaSjU" target="_blank">
+                    Identificación de actores y agentes
+                </a>
+                <div class="dropdown-content">
+                    <a href="https://unesco.sharepoint.com/:l:/s/MexicoTeam/FGhsNrSS1BZEq1gOGblPeRMBZT6qBKJ3H7e5ilCXlUahpA?e=NAsJiQ" target="_blank">Identificación de agentes</a>
+                    <a href="https://unesco.sharepoint.com/:l:/s/MexicoTeam/FIjewQG5XjZDvHIWWVACgvEBX9MXcoKzbBayK6Twlz5ZRA?e=TZlsim" target="_blank">Identificación de organizaciones</a>
+                </div>
+            </div>
+            <p class="description">
+                Se llevó a cabo un mapeo de los actores y organizaciones que integran el entramado artístico-cultural vinculado a las
+                actividades desarrolladas en los sitios del circuito. En esta sección se podrá consultar el listado de actores y
+                organizaciones identificadas.
+            </p>
         </div>
     </div>
 </body>
