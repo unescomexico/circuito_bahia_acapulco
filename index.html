@@ -7,124 +7,185 @@
     <title>Circuito Bahía Histórica</title>
     <style>
         /* Importamos Montserrat */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-        /* Reset básico y asegurar que la página cubra el viewport completo */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* Reset básico y asegurar que la página cubra el viewport completo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-        }
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
 
-        /* Fondo que cubre toda la pantalla sin repetirse */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: url('pics/1.jpg') no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
-        }
+/* Fondo que cubre toda la pantalla sin repetirse */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: url('pics/1.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
-        /* Contenedor central (overlay) */
-        .overlay {
-            position: relative;
-            margin: 20px auto;
-            background: rgba(0, 0, 255, 0.5); /* Azul transparente */
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            width: 90%;
-            max-width: 800px;
-        }
+/* Contenedor central (overlay) */
+.overlay {
+    position: relative;
+    margin: 20px auto;
+    background: rgba(0, 0, 255, 0.5); /* Azul transparente */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+}
 
+.overlay h1 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
 
-        .overlay h1 {
-            font-size: 2.5em;
-            color: #fff;
-            margin-bottom: 10px;
-        }
+.overlay h2 {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 20px;
+}
 
-        .overlay h2 {
-            font-size: 1.8em;
-            color: #fff;
-            margin-bottom: 20px;
-        }
+/* Contenedor de botones */
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
 
-        /* Contenedor de botones */
-        .button-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-        }
+/* Estilo común para botones y el botón principal del dropdown */
+.btn,
+.dropdown-btn {
+    background: #007BFF;
+    color: #fff;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 6px;
+    display: inline-block;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    transition: background 0.3s;
+    cursor: pointer;
+    font-size: 1.2em;
+    border: none;
+}
 
-        /* Estilo común para botones y el botón principal del dropdown */
-        .btn,
-        .dropdown-btn {
-            background: #007BFF;
-            color: #fff;
-            padding: 15px;
-            text-decoration: none;
-            border-radius: 6px;
-            display: inline-block;
-            width: 100%;
-            max-width: 600px;
-            text-align: center;
-            transition: background 0.3s;
-            cursor: pointer;
-            font-size: 1.2em;
-            border: none;
-        }
+.btn:hover,
+.dropdown-btn:hover {
+    background: #0056b3;
+}
 
-        .btn:hover,
-        .dropdown-btn:hover {
-            background: #0056b3;
-        }
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
 
-        /* Dropdown container */
-        .dropdown {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-        }
+/* Contenido del dropdown: oculto por defecto */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #007BFF;
+    width: 100%;
+    border-radius: 0 0 4px 4px;
+    z-index: 100;
+}
 
-        /* Contenido del dropdown: oculto por defecto */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: #007BFF;
-            width: 100%;
-            border-radius: 0 0 4px 4px;
-            z-index: 100;
-        }
+/* Opciones del dropdown */
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    transition: background 0.3s;
+    text-align: left;
+}
 
-        /* Opciones del dropdown */
-        .dropdown-content a {
-            display: block;
-            padding: 10px 15px;
-            text-decoration: none;
-            color: #fff;
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
-            transition: background 0.3s;
-            text-align: left;
-        }
+.dropdown-content a:hover {
+    background: #0056b3;
+}
 
-        .dropdown-content a:hover {
-            background: #0056b3;
-        }
+/* Mostrar dropdown al pasar el cursor sobre el contenedor */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
-        /* Mostrar dropdown al pasar el cursor sobre el contenedor */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+/* Descripción */
+.description {
+    color: #fff;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    max-width: 600px;
+    text-align: justify;
+}
+
+/* Imagen centrada encima del título */
+.pleca-acapulco {
+    display: block;
+    margin: 0 auto 10px auto;
+    max-width: 400px;
+    height: auto;
+}
+
+/* Submenú dentro del dropdown */
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu > a::after {
+    content: "▶";
+    float: right;
+    margin-left: 10px;
+    font-size: 0.8em;
+}
+
+/* Contenedor del submenú oculto por defecto */
+.dropdown-submenu-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background: #007BFF;
+    border-radius: 0 4px 4px 4px;
+    min-width: 200px;
+    z-index: 101;
+}
+
+/* Mostrar submenú al pasar el cursor */
+.dropdown-submenu:hover .dropdown-submenu-content {
+    display: block;
+}
+
+/* Estilo para enlaces dentro del submenú */
+.dropdown-submenu-content a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    display: block;
+    white-space: nowrap;
+    background-color: #007BFF;
+}
+
+.dropdown-submenu-content a:hover {
+    background-color: #0056b3;
+}
+
 
         /* Descripción */
         .description {
@@ -250,6 +311,41 @@
             </div>
             <p class="description">
                 Se llevó a cabo un mapeo de los actores y organizaciones que integran el entramado artístico-cultural vinculado a las
+                actividades desarrolladas en los sitios del circuito. En esta sección se podrá consultar el listado de actores y
+                organizaciones identificadas.
+            </p>
+
+            <!-- Talleres -->
+            <div class="dropdown">
+                <a class="dropdown-btn"
+                    href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/06%20Talleres?csf=1&web=1&e=aruFOK"
+                    target="_blank">
+                    Talleres para la reactivación artística y cultural de Acapulco
+                </a>
+                <div class="dropdown-content">
+                    <!-- Submenú de Reportes -->
+                    <div class="dropdown-submenu">
+                        <a href="#">Reportes de talleres</a>
+                        <div class="dropdown-submenu-content">
+                            <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/06%20Talleres/Reportes/Primera%20etapa?csf=1&web=1&e=FhGCCU" target="_blank">Primera etapa</a>
+                            <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/06%20Talleres/Reportes/Segunda%20etapa?csf=1&web=1&e=ERWSgL" target="_blank">Segunda etapa</a>
+                        </div>
+                    </div>
+            
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/06%20Talleres/Material%20audiovisual?csf=1&web=1&e=xq0P7J"
+                        target="_blank">Material audiovisual</a>
+                        <div class="dropdown-submenu-content">
+                            <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/06%20Talleres/Material%20audiovisual/Imagenes?csf=1&web=1&e=CPwQgo" target="_blank">Imagenes</a>
+                            <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/06%20Talleres/Material%20audiovisual/Videos?csf=1&web=1&e=miUpgJ" target="_blank">Videos</a>
+                        </div>
+                    <a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/06%20Talleres/Promocionales?csf=1&web=1&e=sJQ5Ug"
+                        target="_blank">Promocionales</a>
+                </div>
+            </div>
+
+            <p class="description">
+                Se llevó a cabo un mapeo de los actores y organizaciones que integran el entramado artístico-cultural vinculado a
+                las
                 actividades desarrolladas en los sitios del circuito. En esta sección se podrá consultar el listado de actores y
                 organizaciones identificadas.
             </p>
