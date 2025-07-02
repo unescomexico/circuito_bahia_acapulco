@@ -6,204 +6,244 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Circuito Bahía Histórica</title>
 <style>
-        /* Importamos Montserrat */
+/* Importamos Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
-/* Reset básico y asegurar que la página cubra el viewport completo */
+/* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
+html, body {
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  background: url('pics/1.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  line-height: 1.6;
 }
 
-/* Fondo que cubre toda la pantalla sin repetirse */
-body {
-    font-family: 'Montserrat', sans-serif;
-    background: url('pics/1.jpg') no-repeat center center;
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-/* Contenedor central (overlay) */
+/* Contenedor central */
 .overlay {
-    position: relative;
-    margin: 20px auto;
-    background: rgba(0, 0, 255, 0.5); /* Azul transparente */
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    width: 90%;
-    max-width: 800px;
+  position: relative;
+  margin: 20px auto;
+  background: rgba(0, 0, 255, 0.5);
+  padding: 20px 25px;
+  border-radius: 8px;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
 }
 
+/* Títulos */
 .overlay h1 {
-    font-size: 2.5em;
-    color: #fff;
-    margin-bottom: 10px;
+  font-size: 2.2em;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
 .overlay h2 {
-    font-size: 1.8em;
-    color: #fff;
-    margin-bottom: 20px;
+  font-size: 1.4em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Imagen principal */
+.pleca-acapulco {
+  display: block;
+  margin: 0 auto 15px auto;
+  max-width: 100%;
+  height: auto;
 }
 
 /* Contenedor de botones */
 .button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
 
-/* Estilo común para botones y el botón principal del dropdown */
+/* Estilo de botones */
 .btn,
 .dropdown-btn {
-    background: #007BFF;
-    color: #fff;
-    padding: 15px;
-    text-decoration: none;
-    border-radius: 6px;
-    display: inline-block;
-    width: 100%;
-    max-width: 600px;
-    text-align: center;
-    transition: background 0.3s;
-    cursor: pointer;
-    font-size: 1.2em;
-    border: none;
+  background: #007BFF;
+  color: #fff;
+  padding: 12px 15px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  transition: background 0.3s;
+  cursor: pointer;
+  font-size: 1.1em;
+  border: none;
 }
 
 .btn:hover,
 .dropdown-btn:hover {
-    background: #0056b3;
+  background: #0056b3;
 }
 
-/* Dropdown container */
+/* Dropdown */
 .dropdown {
-    position: relative;
-    width: 100%;
-    max-width: 600px;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
 }
 
-/* Contenido del dropdown: oculto por defecto */
 .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #007BFF;
-    width: 100%;
-    border-radius: 0 0 4px 4px;
-    z-index: 100;
+  display: none;
+  position: relative;
+  background: #007BFF;
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+  margin-top: 5px;
+  z-index: 100;
 }
 
-/* Opciones del dropdown */
+.dropdown.active .dropdown-content {
+  display: block;
+}
+
 .dropdown-content a {
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #fff;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    transition: background 0.3s;
-    text-align: left;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #fff;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  background: #007BFF;
+  text-align: left;
 }
 
 .dropdown-content a:hover {
-    background: #0056b3;
-}
-
-/* Mostrar dropdown al pasar el cursor sobre el contenedor */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Descripción */
-.description {
-    color: #fff;
-    font-size: 0.9em;
-    margin-bottom: 10px;
-    max-width: 600px;
-    text-align: justify;
-}
-
-/* Imagen centrada encima del título */
-.pleca-acapulco {
-    display: block;
-    margin: 0 auto 10px auto;
-    max-width: 400px;
-    height: auto;
+  background: #0056b3;
 }
 
 /* Submenú dentro del dropdown */
 .dropdown-submenu {
-    position: relative;
+  position: relative;
 }
 
+.dropdown-submenu > a {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  background-color: #007BFF;
+  text-decoration: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Flecha */
 .dropdown-submenu > a::after {
-    content: "▶";
-    float: right;
-    margin-left: 10px;
-    font-size: 0.8em;
+  content: "▼";
+  float: right;
+  font-size: 0.8em;
+  margin-left: 10px;
 }
 
-/* Contenedor del submenú oculto por defecto */
+/* Contenido del submenú */
 .dropdown-submenu-content {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    background: #007BFF;
-    border-radius: 0 4px 4px 4px;
-    min-width: 200px;
-    z-index: 101;
+  display: none;
+  background: #0056b3;
+  border-radius: 0 0 4px 4px;
+  padding-left: 15px;
 }
 
-/* Mostrar submenú al pasar el cursor */
-.dropdown-submenu:hover .dropdown-submenu-content {
-    display: block;
-}
-
-/* Estilo para enlaces dentro del submenú */
 .dropdown-submenu-content a {
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #fff;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    display: block;
-    white-space: nowrap;
-    background-color: #007BFF;
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95em;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #0056b3;
 }
 
 .dropdown-submenu-content a:hover {
-    background-color: #0056b3;
+  background-color: #003f7f;
+}
+
+/* Mostrar submenú al hacer clic (clase agregada vía JS) */
+.dropdown-submenu.active .dropdown-submenu-content {
+  display: block;
+}
+
+/* Opcional: mejora en móviles */
+@media (max-width: 768px) {
+  .dropdown-submenu > a::after {
+    content: "▶";
+  }
 }
 
 
-        /* Descripción */
-        .description {
-            color: #fff;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-            max-width: 600px;
-            text-align: justify;
-        }
-        /* Imagen centrada encima del título */
-        .pleca-acapulco {
-            display: block;
-            margin: 0 auto 10px auto; /* Centra y añade espacio debajo */
-            max-width: 400px; /* Controla el tamaño máximo */
-            height: auto;
-        }
+/* Descripciones */
+.description {
+  color: #fff;
+  font-size: 0.95em;
+  margin: 10px auto 20px;
+  max-width: 600px;
+  text-align: justify;
+  padding: 0 5px;
+}
 
-    </style>
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .overlay {
+    padding: 15px;
+    width: 95%;
+  }
+
+  .overlay h1 {
+    font-size: 1.7em;
+  }
+
+  .overlay h2 {
+    font-size: 1.2em;
+  }
+
+  .btn,
+  .dropdown-btn {
+    font-size: 1em;
+    padding: 12px;
+  }
+
+  .description {
+    font-size: 0.9em;
+    padding: 0 10px;
+  }
+
+  .dropdown-content,
+  .dropdown-submenu-content {
+    position: static;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  .dropdown-submenu > a::after {
+    display: none;
+  }
+}
+
+/* HABILITAR hover EN ESCRITORIO */
+@media (hover: hover) and (pointer: fine) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-submenu:hover .dropdown-submenu-content {
+    display: block;
+  }
+}
+
+</style>
+
 </head>
 <body>
 <div class="overlay">
@@ -214,9 +254,15 @@ body {
 <h2>Un recorrido por el Acapulco Tradicional</h2>
 <div class="button-container">
 <!-- Información General -->
-<a class="btn" href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/00%20Informaci%C3%B3n%20general%20del%20circuito?csf=1&amp;web=1&amp;e=fa2Js9" target="_blank">
+<div class="dropdown">
+<a class="dropdown-btn" href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/00%20Informaci%C3%B3n%20general%20del%20circuito?csf=1&amp;web=1&amp;e=fa2Js9" target="_blank">
                 Información general del circuito
             </a>
+<div class="dropdown-content">
+<a href="https://unesco.sharepoint.com/:b:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/00%20Informaci%C3%B3n%20general%20del%20circuito/Cuadernillo%20Circuito%20Cultural%20y%20Tur%C3%ADstico.pdf?csf=1&web=1&e=LapW5B">Cuadernillo Circuito Cultural y Turístico</a>
+<a href="https://unesco.sharepoint.com/:b:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/00%20Informaci%C3%B3n%20general%20del%20circuito/Circuito%20Bahia%20Hist%C3%B3rica%20-%20Conociendo%20el%20destino.pdf?csf=1&web=1&e=gkjLXp" target="_blank">Circuito Bahía Histórica: Conociendo el Destino</a>
+</div>
+</div>
 <p class="description">
                 Se incluye en este apartado material producido con respecto a la generalidad del circuito,
                 incluyendo las fichas para el diagnóstico y proposición de proyectos relativos a los sitios que lo
@@ -289,6 +335,23 @@ body {
                 actividades desarrolladas en los sitios del circuito. En esta sección se podrá consultar el listado de actores y
                 organizaciones identificadas.
             </p>
+<!-- Presentaciones -->
+<div class="dropdown">
+<a class="dropdown-btn" href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/07%20Presentaciones?csf=1&web=1&e=779mhn" target="_blank">
+                    Presentaciones
+                </a>
+<div class="dropdown-content">
+<a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/07%20Presentaciones/An%C3%A1lisis%20urbano?csf=1&web=1&e=ASHGfa" target="_blank">Análisis urbano</a>
+<a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/07%20Presentaciones/Circuito%20Cultural?csf=1&web=1&e=YZ39hV" target="_blank">Circuito cultural</a>
+<a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/07%20Presentaciones/Da%C3%B1os%20Otis?csf=1&web=1&e=6PLxEU" target="_blank">Daños</a>
+<a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/07%20Presentaciones/Equipamiento%20y%20servicios?csf=1&web=1&e=AAscjq" target="_blank">Equipamiento y servicios</a>
+<a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/07%20Presentaciones/Estatus%20de%20actividades?csf=1&web=1&e=f9Hyo1" target="_blank">Estatus de actividades</a>
+<a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/07%20Presentaciones/Patrimonio%20edificado?csf=1&web=1&e=UMVZs9" target="_blank">Patrimonio edificado</a>
+</div>
+</div>
+<p class="description">
+                En esta sección se reúnen las presentaciones elaboradas en el marco del proyecto, las cuales abordan diversos temas clave, como la exploración de planes de desarrollo urbano, la identificación de patrimonio edificado y el análisis de servicios e infraestructura turística.
+            </p>
 <!-- Talleres -->
 <div class="dropdown">
 <a class="dropdown-btn" href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/06%20Talleres?csf=1&amp;web=1&amp;e=aruFOK" target="_blank">
@@ -325,7 +388,6 @@ body {
 <div class="dropdown">
 <div class="dropdown-btn">Material complementario</div>
 <div class="dropdown-content">
-<a href="https://unesco.sharepoint.com/:f:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Presentaciones?csf=1&amp;web=1&amp;e=D2QmEE" target="_blank">Presentaciones</a>
 <a href="https://unesco.sharepoint.com/:x:/r/sites/MexicoTeam/Shared%20Documents/Cultura/Acapulco/Circuito%20Bah%C3%ADa%20Hist%C3%B3rica/09%20Edificaciones%20de%20valor%20patrimonial/PATRIMONIO_ACAPULCO.xlsx?d=wa96958f3c49c4d47b0586c9c5f8ea466&amp;csf=1&amp;web=1&amp;e=5diG4E" target="_blank">Identificación de edificaciones de interés patrimonial</a>
 <div class="dropdown-submenu">
 <a class="submenu-title" href="#">Imágenes de circuito</a>
@@ -345,5 +407,26 @@ body {
             </p>
 </div>
 </div>
+
+<script>
+  // Toggle principal
+  document.querySelectorAll('.dropdown-btn').forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      const dropdown = this.closest('.dropdown');
+      dropdown.classList.toggle('active');
+    });
+  });
+
+  // Toggle submenú
+  document.querySelectorAll('.dropdown-submenu > a').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const submenu = this.parentElement;
+      submenu.classList.toggle('active');
+    });
+  });
+</script>
+
 </body>
 </html>
